@@ -12,7 +12,7 @@ La finalidad del mismo es la de:
 ## Integrantes
     - Federico Carabelli
     - Alex Cerutti
-    - Andres Claro 
+    - Andres Claro Cordoba
     - Lucas Diaz
     - Nicolas de la Cruz
     - Juan Rivero
