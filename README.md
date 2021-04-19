@@ -4,10 +4,10 @@ de la carrera de Ingeniería en Sistemas dicatada por la Universidad Tecnológic
 
 ## Objetivo
 La finalidad del mismo es la de:
-    * Acercar al grupo a las herramientas para llevar a cabo el control de versiones sobre los archivos subidos
-    * Diseñar la estructura del repositorio
-    * Implementar la misma para resguardar el trabajo generado durante el cursado de la materia.
-    * Definir lineas base del proyecto
+    - Acercar al grupo a las herramientas para llevar a cabo el control de versiones sobre los archivos subidos
+    - Diseñar la estructura del repositorio
+    - Implementar la misma para resguardar el trabajo generado durante el cursado de la materia.
+    - Definir lineas base del proyecto
     
 ## Integrantes
     - Federico Carabelli
