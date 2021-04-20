@@ -11,7 +11,7 @@ La finalidad del mismo es la de:
 
 ## Estructura del Repositorio 
 
-![Screenshot](screenshot.png)
+![Screenshot](screenshot1.png)
 
 ## Nomenclatura general → CamelCase
 
