@@ -1,5 +1,5 @@
-## ```diff Grupo N° 8 - TP N° 4 - U.T.N. F.R.C. in red ```
-
+## Grupo N° 8 - TP N° 4 - U.T.N. F.R.C. 
+## - ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `#f03c15`
 # Bienvenidos
 En el siguiente repositorio encontraremos una variedad de topicos acerca de la materia Ingeniería de Software 
 de la carrera de Ingeniería en Sistemas dicatada por la Universidad Tecnológica Nacional Facultad Regional de Cordoba.
