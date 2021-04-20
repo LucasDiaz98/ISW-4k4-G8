@@ -9,27 +9,9 @@ La finalidad del mismo es la de:
     - Implementar la misma para resguardar el trabajo generado durante el cursado de la materia.
     - Definir lineas base del proyecto
 
-##Estructura del Repositorio 
+## Estructura del Repositorio 
+
 ![Screenshot](screenshot.png)
-ISW-4K4-G8
-├── ISW-2021
-│   ├── Bibliofrafia
-│   ├── ModalidadAcademicaYProtocolos
-│   ├── Practico
-│   │ 	└──TemplatesParaParciales
-│   │	└──TrabajosPracticos
-│   │		└─Evaluables
-│   │		└─NoEvaluables
-│   │		└─Soluciones			
-│   │	     	     	
-│   │
-│   │	     	
-│   └── Teorico
-│   	   └─IntroduccionALaMateria
-│   	   └─PresentacionesDeClase
-│   	   └─Resumenes
-│
-└── README.md
 
 ## Nomenclatura general → CamelCase
 
