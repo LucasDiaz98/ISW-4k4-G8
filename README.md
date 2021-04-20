@@ -10,7 +10,7 @@ La finalidad del mismo es la de:
     - Definir lineas base del proyecto
 
 ##Estructura del Repositorio 
-
+![Screenshot](screenshot.png)
 ISW-4K4-G8
 ├── ISW-2021
 │   ├── Bibliofrafia
