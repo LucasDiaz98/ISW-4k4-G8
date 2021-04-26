@@ -1,4 +1,4 @@
-# DeliverEat - Tp6 - Grupo8
+# DeliverEat! - Tp6 - Grupo8
 
 El siguiente trabajo fue realizado con HTML-CSS-JAVASCRIPT-BOOTSTRAP
 
