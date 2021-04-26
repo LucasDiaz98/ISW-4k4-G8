@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/popper.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
+
+    <title>DeliverEat</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <div class="row align-items-stretch justify-content-between">
+                <nav class="navbar navbar-expand-md navbar-dark fixed-top " style="background-color: #a64141;">
+                    <a class="navbar-brand" href="#">DeliverEat</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse " id="navbarCollapse">
+                        <ul class="navbar-nav mr-auto  ">
+                            <li class="nav-item dropdown">
+                                <img src="img/cart.jpeg" class="nav-link dropdown-toggle img-fluid" height="70px"
+                                    width="70px" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false"></img>
+                                <div id="carrito" class="dropdown-menu" aria-labelledby="navbarCollapse">
+                                    <table id="lista-carrito" class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Imagen</th>
+                                                <th>Nombre</th>
+                                                <th>Precio</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody></tbody>
+                                    </table>
+
+                                    <a href="#" id="vaciar-carrito" class="btn btn-primary btn-block">Vaciar Carrito</a>
+                                    <a href="#" id="procesar-pedido" class="btn btn-danger btn-block">Procesar
+                                        Compra</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 my-4 mx-auto text-center">
+            <h1 class="display-4 mt-4">Lista de Productos</h1>
+            <p class="lead">Selecciona los productos disponibles de comercios adheridos</p>
+        </div>
+
+        <div class="container" id="lista-productos">
+
+            <div class="card-deck mb-3 text-center">
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">VINO ALMA MORA</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/vino_alma.jpg" height="300em" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">ARS <span class="">381.50</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>1 unidad</li>
+                            <li>750cc</li>
+                            <li>$ 507 x litro</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="9">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">VINO BRAVIO DULCE </h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/bravio_dulce.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">ARS <span class="">282.50</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>1 unidad</li>
+                            <li>750cc</li>
+                            <li>$ 376.67 x litro</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="8">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">VINO PORTILLO MALBEC</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/portillo.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">ARS <span class="">569.00</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>estuche x 2 unidades</li>
+                            <li>750cc</li>
+                            <li>$ 379.33 x litro</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="9">Comprar</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="card-deck mb-3 text-center">
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">LOMO VACUNO CABAÑA</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/lomo.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">ARS <span class="">1090.00</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>1 unidad</li>
+                            <li>1Kg</li>
+                            <li>$ 1090.00 x Kg</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="4">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">VACIO CABAÑA BELTRAN</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/vacio.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">ARS<span class=""> 830.00</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>1 unidad</li>
+                            <li>1Kg</li>
+                            <li>$ 830.00 x Kg</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="5">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">MATAMBRE CABAÑA BELTRAN</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/matambre.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">ARS <span class=""> 950.00</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>1 unidad</li>
+                            <li>1Kg</li>
+                            <li>$ 950.00 x Kg</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="9">Comprar</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="card-deck mb-3 text-center">
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">ACEITE DE GIRASOL CAÑUELAS</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/cañuelas.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">ARS <span class=""> 239.00</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>1 unidad</li>
+                            <li>1.5 lts</li>
+                            <li>$ 159.33 x litro</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="7">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">ACEITE DE OLIVA COCINERO</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/oliva.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">ARS <span class=""> 159.00</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>1 unidad</li>
+                            <li>250 ml</li>
+                            <li>$ 636.00 x litro</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="8">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">ACEITE DE SOJA Y GIRASOL COCINERO</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/soja.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">ARS <span class=""> 119.00</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>1 unidad</li>
+                            <li>990 cc</li>
+                            <li>$ 132.22 x litro</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="9">Comprar</a>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+            <div class="card-deck mb-3 text-center">
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">AGUA MICELAR LOREAL</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/agua_dove.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">ARS <span class=""> 524.90</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>1 unidad</li>
+                            <li>200 ml</li>
+                            <li>$ 2624.50 x litro</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="7">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">AGUA MICELAR DOVE</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/agua.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">ARS <span class=""> 420.50</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>1 unidad</li>
+                            <li>200 ml</li>
+                            <li>$ 2102.50 x litro</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="8">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">AGUA MICELAR GARNIER</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/agua_garnier.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">ARS <span class=""> 607.50</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>1 unidad</li>
+                            <li>400 ml</li>
+                            <li>$ 1518.75 x litro</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="9">Comprar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-deck mb-3 text-center">
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">BOLIGRAFO BIC CRISTAL</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/lapiceras_bic.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">ARS <span class=""> 489.00</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>1 unidad x 10</li>
+                            <li>Colores intensos</li>
+                            <li>$ 48.90 x unidad</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="7">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">BLOCK A4 AVON</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/block_hojas.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">ARS <span class=""> 135.00</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>1 unidad</li>
+                            <li>80 hojas</li>
+                            <li>$ 1.69 x hoja</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="8">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">BIBLIORATO</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/bibliorato.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">ARS <span class=""> 299.00</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>1 unidad</li>
+                            <li>varios colores</li>
+                            <li>$ 299.00 x unidad</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="9">Comprar</a>
+                    </div>
+                </div>
+
+            </div>
+    </main>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/sweetalert2.min.js"></script>
+    <script src="js/carrito.js"></script>
+    <script src="js/pedido.js"></script>
+
+</body>
+
+</html>

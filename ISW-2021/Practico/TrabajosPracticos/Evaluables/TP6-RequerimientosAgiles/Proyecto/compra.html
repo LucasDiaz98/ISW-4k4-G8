@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/estilo.css">
+    <script src="js/popper.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
+
+    <title>DeliverEat</title>
+
+
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="row justify-content-between mb-5">
+                <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: #a64141;">
+                    <a class="navbar-brand " href="index.html">DeliverEat</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <br>
+
+    <main>
+        <div class="container" id="contenedor-prueba">
+            <div class="row mt-3">
+                <div class="col">
+                    <h2 class="d-flex justify-content-center mb-3">Realizar Pedido</h2>
+                    <form id="procesar-pago">
+                        <div class="form-group row">
+                            <label for="calle" class="col-12 col-md-2 col-form-label h2">Calle :</label>
+                            <div class="col-12 col-md-10">
+                                <input type="text" onkeypress="return /[a-z]/i.test(event.key)" class="form-control"
+                                    id="calle" placeholder="Ingresa nombre de calle">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="altura" class="col-12 col-md-2 col-form-label h2">Altura de calle :</label>
+                            <div class="col-12 col-md-10">
+                                <input type="number" oninput="this.value = Math.round(this.value);" class="form-control"
+                                    id="altura" placeholder="Ingresa la altura de la calle" minlength="0">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="select" class="col-12 col-md-2 col-form-label h2">Ciudad :</label>
+                            <div class="col-12 col-md-10">
+                                <select name="select" id="ciudad" style="width:48em">
+                                    <option value="0" selected disabled>Seleccione ciudad</option>
+                                    <option value="1">Cordoba</option>
+                                    <option value="2">Rosario</option>
+                                    <option value="3">Buenos Aires</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="referencia" class="col-12 col-md-2 col-form-label h2">Referencia :</label>
+                            <div class="col-12 col-md-10">
+                                <input type="text" class="form-control" onkeypress="return /[a-z]/i.test(event.key)"
+                                    id="referencia" placeholder="Agregue a descripcion adicional" name="referencia">
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+                            <label class="col-12 col-md-2 col-form-label h2">Medio de pago :</label>
+                            <div class="form-group col-4">
+                                <input type="radio" name="opciones" onkeypress="return /[a-z]/i.test(event.key)"
+                                    value="Efectivo" id="multiples"> Efectivo<br>
+                                <div class="form-group row" id="div1" style="display:none">
+                                    <div class="col-12 col-md-10">
+                                        <label class="col-12 col-md-2 col-form-label h2">Monto:</label>
+                                        <input type="number" class="form-control" id="monto" placeholder="Ingrese monto"
+                                            name="destinatario">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group col-4">
+                                <input type="radio" name="opciones" value="Tarjeta" id="individual">Tarjeta visa
+                                <div id="div2" style="display:none">
+                                    <div class="payment-info">
+                                        <div class="d-flex justify-content-between align-items-center"><span>Detalles de
+                                                la tarjeta</span></div>
+                                        <span><img width="30"
+                                                src="https://img.icons8.com/officel/48/000000/visa.png" /></span>
+                                        </label>
+                                        <div><label class="credit-card-label">Titular de la tarjeta</label><input
+                                                type="text" onkeypress="return /[a-z]/i.test(event.key)" id="titular"
+                                                class="form-control credit-inputs" placeholder="Ingrese su nombre">
+                                        </div>
+                                        <div><label class="credit-card-label">Numero de la tarjeta</label><input
+                                                type="number" pattern="/^-?\d+\.?\d*$/"
+                                                onKeyPress="if(this.value.length==16) return false;"
+                                                oninput="this.value = Math.round(this.value);" id="numeroT"
+                                                class="form-control credit-inputs" placeholder="XXXX XXXX XXXX XXXX">
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6"><label class="credit-card-label">Fecha
+                                                    vto</label><br><input type="number" placeholder="MES" max="31"
+                                                    min="1" id="mesV">
+                                                <br> <input type="number" placeholder="AÑO" min="2021" max="2080"
+                                                    id="anoV">
+                                            </div>
+                                            <div class="col-md-6"><label class="credit-card-label">CVV</label><input
+                                                    type="number" pattern="/^-?\d+\.?\d*$/"
+                                                    onKeyPress="if(this.value.length==3) return false;" id="cvv"
+                                                    class="form-control credit-inputs" placeholder="XXX" maxlength="3">
+                                            </div>
+                                        </div>
+                                        <div class="row" style=" margin-top:1em">
+                                            <button class="col-md-6 text-center m-sm-auto"
+                                                onclick="validarFechaVisa();">Validar tarjeta</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="radio" name="master" id="master" onclick="validarMaster();"> Tarjeta
+                                Mastercard <br>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <script>
+                $(document).ready(function () {
+                    $("#individual").click(function () {
+                        $("#div1").hide();
+                        $("#div2").show();
+
+                    });
+
+                    $("#multiples").click(function () {
+                        $("#div1").show();
+                        $("#div2").hide();
+
+                    });
+                });
+            </script>
+
+
+
+
+            <div class="form-group row">
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+                <label class="col-12 col-md-2 col-form-label h2">Tipo de recepción:</label>
+                <div class="form-group col-4">
+                    <input type="radio" name="opciones1" value="Inmeditamente" id="ahora"> Lo antes posible<br>
+                </div>
+                <input type="radio" name="opciones1" value="fecha/hora-pactada" id="fechaRec">Con fecha de recepcion<br>
+                <div class="form-group col-4">
+                    <div class="form-group row" id="div3" style="display:none">
+                        <div class="col-12 col-md-10">
+                            <label class="col-12 col-md-2 col-form-label h2">Fecha-Hora:</label>
+                            <input type="datetime-local" class="form-control" id="fecha-hora"
+                                placeholder="Ingrese la fecha-hora" name="destinatario">
+                            <div class="row" style=" margin-top:1em">
+                                <button class="col-md-6 text-center m-sm-auto"
+                                    onclick="return validarFechaEnvio();">Validar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <script>
+                $(document).ready(function () {
+                    $("#fechaRec").click(function () {
+                        $("#div3").show();
+
+                    });
+
+                    $("#ahora").click(function () {
+                        $("#div3").hide();
+
+                    });
+                });
+            </script>
+
+
+            <div id="carrito" class="form-group table-responsive">
+                <table class="form-group table" id="lista-compra">
+                    <thead>
+                        <tr>
+                            <th scope="col">Imagen</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Precio</th>
+                            <th scope="col">Cantidad</th>
+                            <th scope="col">Sub Total</th>
+                            <th scope="col">Eliminar</th>
+                        </tr>
+
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                    <tr>
+                        <th colspan="4" scope="col" class="text-right">SUB TOTAL :</th>
+                        <th scope="col">
+                            <p id="subtotal"></p>
+                        </th>
+                        <!-- <th scope="col"></th> -->
+                    </tr>
+                    <tr>
+                        <th colspan="4" scope="col" class="text-right">ENVÍO :</th>
+                        <th scope="col">
+                            <p id="igv"></p>
+                        </th>
+                        <!-- <th scope="col"></th> -->
+                    </tr>
+                    <tr>
+                        <th colspan="4" scope="col" class="text-right">TOTAL :</th>
+                        <th scope="col">
+                            <input id="total" name="monto" class="font-weight-bold border-0" readonly
+                                style="background-color: white;"></input>
+                        </th>
+                        <!-- <th scope="col"></th> -->
+                    </tr>
+
+                </table>
+            </div>
+
+            <div class="row justify-content-center" id="loaders">
+                <img id="cargando" src="img/cargando.gif" width="220">
+            </div>
+
+            <div class="row justify-content-between">
+                <div class="col-md-4 mb-2">
+                    <a href="index.html" class="btn btn-info btn-block">Seguir comprando</a>
+                </div>
+                <div class="col-xs-12 col-md-4">
+                    <input type="button" onclick="procesarCompra();" class="btn btn-danger btn-block"
+                        id="procesar-compra" value="Realizar compra">
+                </div>
+                <div class="col-md-4 mb-2">
+                    <input type="button" onclick="generarPDF();" class="btn btn-success btn-block"
+                        id="imprimir" value="Imprimir comprobante">
+                </div>
+            </div>
+            </form>
+
+            </form>
+
+
+
+
+
+        </div>
+
+        </div>
+    </main>
+
+
+
+
+
+    </div>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/sweetalert2.min.js"></script>
+
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+
+    <script src="js/carrito.js"></script>
+    <script src="js/compra.js"></script>
+    <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js'"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.0/html2pdf.bundle.min.js"></script>
+    <script src="html2pdf.bundle.min.js"></script>
+
+</body>
+
+</html>

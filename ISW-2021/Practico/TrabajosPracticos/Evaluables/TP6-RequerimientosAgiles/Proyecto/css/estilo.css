@@ -1,0 +1,12 @@
+#cargando {
+    display: none;
+}
+
+body {
+    background-color: rgb(209, 205, 205);
+}
+
+img {
+    max-width: 100%;
+    height   : auto;
+}
