@@ -7,7 +7,7 @@ El siguiente trabajo fue realizado con HTML-CSS-JAVASCRIPT-BOOTSTRAP
 
 2) Ejecutar el archivo index.html
 
-3)Elegir productos a ser agregados, por defecto el carro ya viene cargado en funcion de lo solicitado por la user story
+3) Elegir productos a ser agregados, por defecto el carro ya viene cargado en funcion de lo solicitado por la user story
 
 4) En el carrito seleccionar "Procesar compra"
 
