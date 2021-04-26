@@ -263,7 +263,7 @@ function procesarCompra() {
 
                 }
                 )
-                window.location = ".html"
+                window.location = "compras.html"
             }
         })
     }
