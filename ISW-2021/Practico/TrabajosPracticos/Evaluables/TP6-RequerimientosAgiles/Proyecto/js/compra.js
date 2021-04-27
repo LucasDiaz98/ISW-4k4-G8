@@ -96,26 +96,12 @@ function validarFechaVisa(){
 
 
 function validarFechaEnvio(){
-    var actual = new Date.now();
-    var dia = actual.getDate();
-    var mes = actual.getMonth();
-    var anio = actual.getFullYear();
-    var hora = actual.getHours();
-    var min = actual.getMinutes();
-    var seg = actual.getSeconds();
-
-    var diaE = fechaE.getDate();
-    var mesE = fechaE.getMonth();
-    var anioE = fechaE.getFullYear();
-    var horaE = fechaE.getHours();
-    var minE = fechaE.getMinutes();
-    var segE = fechaE.getSeconds();
-
-    if( diaE < dia || mesE < mes || anioE < anio || horaE < hora || minE < min || segE < seg){
-        alert("Fechas erronas")
-    }
-    else{
-        alert("todo piolas")
+    var actual = new Date();
+    var fechaHoraActual = ""+actual.getFullYear()+(actual.getMonth()+1)+actual.getDate()+actual.getHours()+actual.getMinutes()+actual.getSeconds();
+    var fechaHoraEnvio = ""+fechaE.getFullYear()+(fechaE.getMonth()+1)+fechaE.getDate()+fechaE.getHours()+fechaE.getMinutes()+fechaE.getSeconds();
+    
+    if(fechaHoraActual < fechaHoraEnvio){
+        alert("Por favor ingrese una fecha y hora valida");
     }
 }
 
