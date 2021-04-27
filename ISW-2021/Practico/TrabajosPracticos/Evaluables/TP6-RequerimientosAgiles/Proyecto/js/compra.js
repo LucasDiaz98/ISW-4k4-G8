@@ -91,6 +91,22 @@ function validarFechaVisa() {
 
 
 
+<<<<<<< HEAD
+=======
+
+
+
+function validarFechaEnvio(){
+    var actual = new Date();
+    var fechaHoraActual = ""+actual.getFullYear()+(actual.getMonth()+1)+actual.getDate()+actual.getHours()+actual.getMinutes()+actual.getSeconds();
+    var fechaHoraEnvio = ""+fechaE.getFullYear()+(fechaE.getMonth()+1)+fechaE.getDate()+fechaE.getHours()+fechaE.getMinutes()+fechaE.getSeconds();
+    
+    if(fechaHoraActual < fechaHoraEnvio){
+        alert("Por favor ingrese una fecha y hora valida");
+    }
+}
+
+>>>>>>> 75c8657e7be7c961486596013a1e59dce33a8fb9
 function validarMaster() {
     if (master.checked) {
         Swal.fire({
@@ -225,7 +241,11 @@ function procesarCompra() {
                     showConfirmButton: false,
                 }
                 )
+<<<<<<< HEAD
                 window.location = "compra.html"
+=======
+                window.location = "compras.html"
+>>>>>>> 75c8657e7be7c961486596013a1e59dce33a8fb9
             }
         })
     }
@@ -239,6 +259,7 @@ function generarPDF() {
         filename: 'Comprobante.pdf'
     })
 }
+<<<<<<< HEAD
 
 
 // parsea datePicker y compara fecha seleccionada con la actual
@@ -273,3 +294,5 @@ function validarFechaRec() {
     }
     
 }
+=======
+>>>>>>> 75c8657e7be7c961486596013a1e59dce33a8fb9
