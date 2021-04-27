@@ -43,20 +43,20 @@ function cargarEventos() {
 }
 
 function armarString() {
-    var compra = '<p><b>Calle</b>: ' + calle.value + ' <b>Altura</b>: ' + altura.value + '</p>' + '<p><b>Ciudad</b>: ' + ciudad.value + '</p>' + '<p><b>Referencia</b>: ' + referencia.value + '</p>';
+    var compra = '<p><b>Calle</b>: ' + calle.value + '</p>' + '<p><b> Altura</b>: ' + altura.value + '</p>' + '<p><b>Ciudad</b>: ' + ciudad.value + '</p>' + '<p><b>Referencia</b>: ' + referencia.value + '</p>';
     if (monto.value != '') {
         compra = compra + '<p><b>Medio de pago</b>: ' + efectivo.value + '</p>' + '<p><b>Monto</b>: ' + monto.value + '</p>'
 
     }
-    else if (titular.value != '') {
+    if (titular.value != '') {
         compra = compra + '<p><b>Medio de pago</b>: ' + tarjeta.value + '</p>' + '<p><b>Titular</b>: ' + titular.value + '</p>' + '<p><b>Numero de Tarjeta</b>: ' + numeroT.value + '</p>' + '<p><b>Fecha de Vencimiento</b>: ' + fechaV.value + '</p>' + '<p><b>CVV</b>: ' + cvv.value + '</p>'
     }
 
-    if (envioInmediato.value != '') {
+    if (envioInmediato.checked ) {
         compra = compra + '<p><b>Forma de envio</b>: ' + envioInmediato.value + '</p>'
     }
 
-    else if (envioFecha.value != '') {
+    if (envioFecha.checked ) {
         compra = compra + '<p><b>Forma de envio</b>: ' + envioFecha.value + '</p>'
     }
 
@@ -66,69 +66,47 @@ function armarString() {
 }
 
 
-function validarFechaVisa(){
+function validarFechaVisa() {
     event.preventDefault();
-    if ((mesV.value > 12 || mesV.value < 1) || (anoV.value < 2021)){
+    if ((mesV.value > 12 || mesV.value < 1) || (numeroT.value.charAt(0) != 4) || (anoV.value < 2021)) {
         Swal.fire({
-            position:'top',
+            position: 'top',
             type: 'error',
             title: 'Oops...',
             text: 'Tarjeta invalida!',
             showConfirmButton: false,
             timer: 3000
-        }).then(function () {
-            window.location = "compra.html";
         })
     }
-    else{
+    else {
         swal.fire({
             type: 'success',
             title: 'Tarjeta valida!',
             text: 'Su tarjeta está vigente ',
             showConfirmButton: false,
         })
-    return (false);
-}
-
-
-
-
-
-
-function validarFechaEnvio(){
-    var actual = new Date.now();
-    var dia = actual.getDate();
-    var mes = actual.getMonth();
-    var anio = actual.getFullYear();
-    var hora = actual.getHours();
-    var min = actual.getMinutes();
-    var seg = actual.getSeconds();
-
-    var diaE = fechaE.getDate();
-    var mesE = fechaE.getMonth();
-    var anioE = fechaE.getFullYear();
-    var horaE = fechaE.getHours();
-    var minE = fechaE.getMinutes();
-    var segE = fechaE.getSeconds();
-
-    if( diaE < dia || mesE < mes || anioE < anio || horaE < hora || minE < min || segE < seg){
-        alert("Fechas erronas")
-    }
-    else{
-        alert("todo piolas")
+        return (false);
     }
 }
+
+
 
 function validarMaster() {
     if (master.checked) {
-        alert(`Funcionalidad en desarollo...` +
-            `Disculpe las molestias`)
+        Swal.fire({
+            type: 'error',
+            title: 'Funcionalidad en desarrollo...',
+            text: 'Disculpe las molestias',
+            showConfirmButton: false,
+            timer: 2000
+        })
     }
-    window.location = "compra.html";
 }
 
 
 function procesarCompra() {
+
+    
     hayError = false;
     // e.preventDefault();
     if (compra.obtenerProductosLocalStorage().length === 0) {
@@ -150,10 +128,7 @@ function procesarCompra() {
             text: 'Ingrese el nombre de la calle',
             showConfirmButton: true,
             timer: 2000
-        }).then(function () {
-            window.location = "compra.html";
-        }
-        )
+        })
     }
 
     else if (altura.value == '' || altura.value == 0 || altura.value < 0) {
@@ -163,8 +138,6 @@ function procesarCompra() {
             text: 'Ingrese el numero de altura',
             showConfirmButton: false,
             timer: 2000
-        }).then(function () {
-            window.location = "compra.html";
         })
     }
 
@@ -177,8 +150,6 @@ function procesarCompra() {
             text: 'Debes seleccionar una ciudad',
             showConfirmButton: false,
             timer: 2000
-        }).then(function () {
-            window.location = "compra.html";
         })
     }
 
@@ -189,21 +160,16 @@ function procesarCompra() {
             text: 'Debes elegir un medio de pago',
             showConfirmButton: false,
             timer: 2000
-        }).then(function () {
-            window.location = "compra.html";
         })
-
     }
 
     else if (efectivo.checked && (monto.value == 0 || monto.value == '')) {
         Swal.fire({
             type: 'error',
             title: 'Oops...',
-            text: 'Ingrese nuevamente los datos del pago',
+            text: 'Ingrese el monto con el que va a pagar',
             showConfirmButton: false,
             timer: 2000
-        }).then(function () {
-            window.location = "compra.html";
         })
     }
 
@@ -214,20 +180,15 @@ function procesarCompra() {
             text: 'Debes elegir una forma de envio',
             showConfirmButton: false,
             timer: 2000
-        }).then(function () {
-            window.location = "compra.html";
         })
-            ;
     }
-    else if (tarjeta.checked && (titular.value == '' || numeroT.value == 0 || cvv.value <= 0 || cvv.value.length < 0)) {
+    else if (tarjeta.checked && (titular.value == '' || numeroT.value == 0 || numeroT.charAt(0) == 5 || cvv.value <= 0 || cvv.value.length < 0)) {
         Swal.fire({
             type: 'error',
             title: 'Oops...',
             text: 'Ingrese nuevamente los datos de la tarjeta',
             showConfirmButton: false,
             timer: 2000
-        }).then(function () {
-            window.location = "compra.html";
         })
     }
 
@@ -236,6 +197,7 @@ function procesarCompra() {
 
             title: "Detalle",
             html: armarString(),
+            function: generarPDF(),
             showCancelButton: true,
             confirmButtonText: 'Confirmar Pago!',
             cancelButtonText: 'Cancelar',
@@ -247,10 +209,11 @@ function procesarCompra() {
                     title: 'Pago Realizado',
                     text: 'Se realizo el pago correctamente',
                     showConfirmButton: false,
-
-                }
-                )
-                window.location = "index.html"
+                    timer:3000
+                }).then(function () {
+                    window.location = "index.html";
+                })
+                
             } else if (
                 /* Read more about handling dismissals below */
                 result.dismiss === Swal.DismissReason.cancel
@@ -260,21 +223,53 @@ function procesarCompra() {
                     title: 'Se cancelo el pago',
                     text: 'Muchas gracias',
                     showConfirmButton: false,
-
                 }
                 )
-                window.location = ".html"
+                window.location = "compra.html"
             }
         })
     }
 }
 
-}
 
-function generarPDF(){
+function generarPDF() {
     var elemento = document.getElementById('contenedor-prueba');
 
-    html2pdf(elemento,{
+    html2pdf(elemento, {
         filename: 'Comprobante.pdf'
     })
+}
+
+
+// parsea datePicker y compara fecha seleccionada con la actual
+function validarFechaRec() {
+    var actual = new Date();
+    var fechaHoraActual = "" + actual.getFullYear() + (actual.getMonth() + 1) + actual.getDate() + actual.getHours() + actual.getMinutes();
+    var fechaEnvio = fechaE.value;
+    var anioFechaE = fechaEnvio.slice(0, 4);
+    var mesFechaE = fechaEnvio.slice(6,7);
+    var diaFechaE = fechaEnvio.slice(8,10);
+    var horaFechaE = fechaEnvio.slice(11,13);
+    var minFechaE = fechaEnvio.slice(14,16);
+    var fechaHoraEnvio = ""+anioFechaE + mesFechaE + diaFechaE + horaFechaE + minFechaE;
+
+    if (fechaHoraEnvio < fechaHoraActual){
+        swal.fire({
+            type: 'error',
+            title: 'La fecha ingresada es inválida',
+            text: 'Porfavor ingrese una nueva',
+            showConfirmButton: false,
+        }
+        )
+    }
+    else{
+        swal.fire({
+            type: 'success',
+            title: 'La fecha ingresada es correcta',
+            text: 'Siga con su compra...!',
+            showConfirmButton: false,
+        }
+        )
+    }
+    
 }

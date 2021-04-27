@@ -10,3 +10,11 @@ img {
     max-width: 100%;
     height   : auto;
 }
+
+.payment-info {
+    background: #741817;
+    padding: 10px;
+    border-radius: 6px;
+    color: #fff;
+    font-weight: bold
+}
