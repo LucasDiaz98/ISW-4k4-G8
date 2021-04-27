@@ -28,8 +28,8 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse " id="navbarCollapse">
-                        <ul class="navbar-nav mr-auto  ">
-                            <li class="nav-item dropdown">
+                        <ul class="navbar-nav w-100 me-auto ">
+                            <li class="nav-item dropleft  ml-auto">
                                 <img src="img/cart.jpeg" class="nav-link dropdown-toggle img-fluid" height="70px"
                                     width="70px" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
                                     aria-expanded="false"></img>
@@ -40,12 +40,12 @@
                                                 <th>Imagen</th>
                                                 <th>Nombre</th>
                                                 <th>Precio</th>
+                                                <!-- <th>Peso (gramos)</th> -->
                                                 <th></th>
                                             </tr>
                                         </thead>
                                         <tbody></tbody>
                                     </table>
-
                                     <a href="#" id="vaciar-carrito" class="btn btn-primary btn-block">Vaciar Carrito</a>
                                     <a href="#" id="procesar-pedido" class="btn btn-danger btn-block">Procesar
                                         Compra</a>
@@ -61,7 +61,7 @@
     <main>
         <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 my-4 mx-auto text-center">
             <h1 class="display-4 mt-4">Lista de Productos</h1>
-            <p class="lead">Selecciona los productos disponibles de comercios adheridos</p>
+            <p class="lead">Selecciona los productos del comercio adherido elegido</p>
         </div>
 
         <div class="container" id="lista-productos">
@@ -127,17 +127,18 @@
 
                 <div class="card mb-4 shadow-sm">
                     <div class="card-header">
-                        <h4 class="my-0 font-weight-bold">LOMO VACUNO CABAÑA</h4>
+                        <h4 class="my-0 font-weight-bold">PAN BIMBO P/HAMB</h4>
                     </div>
                     <div class="card-body">
-                        <img src="img/lomo.jpg" class="card-img-top">
-                        <h1 class="card-title pricing-card-title precio">ARS <span class="">1090.00</span></h1>
+                        <img src="img/bimbo.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">ARS <span class="">116.20</span></h1>
 
                         <ul class="list-unstyled mt-3 mb-4">
                             <li></li>
-                            <li>1 unidad</li>
-                            <li>1Kg</li>
-                            <li>$ 1090.00 x Kg</li>
+                            <li>1 unidad x 4</li>
+                            <li>210 grs</li>
+                            <li>$ 553.33 x Kg</li>
+                            <!-- <h6>1000</h6> -->
                         </ul>
                         <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="4">Comprar</a>
                     </div>
@@ -145,17 +146,18 @@
 
                 <div class="card mb-4 shadow-sm">
                     <div class="card-header">
-                        <h4 class="my-0 font-weight-bold">VACIO CAB. BELTRAN</h4>
+                        <h4 class="my-0 font-weight-bold">HAMBURGUESAS PATY</h4>
                     </div>
                     <div class="card-body">
-                        <img src="img/vacio.jpg" class="card-img-top">
-                        <h1 class="card-title pricing-card-title precio">ARS<span class=""> 830.00</span></h1>
+                        <img src="img/paty.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">ARS<span class=""> 773.43</span></h1>
 
                         <ul class="list-unstyled mt-3 mb-4">
                             <li></li>
-                            <li>1 unidad</li>
-                            <li>1Kg</li>
-                            <li>$ 830.00 x Kg</li>
+                            <li>12 unidad</li>
+                            <li>960 grm</li>
+                            <li>$ 64,45 x unidad</li>
+                            <!-- <h6>1000</h6> -->
                         </ul>
                         <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="5">Comprar</a>
                     </div>
@@ -163,17 +165,18 @@
 
                 <div class="card mb-4 shadow-sm">
                     <div class="card-header">
-                        <h4 class="my-0 font-weight-bold">MATAMBRE CAB. BELTRAN</h4>
+                        <h4 class="my-0 font-weight-bold">PAN INTEGRAL</h4>
                     </div>
                     <div class="card-body">
-                        <img src="img/matambre.jpg" class="card-img-top">
-                        <h1 class="card-title pricing-card-title precio">ARS <span class=""> 950.00</span></h1>
+                        <img src="img/pan-integral.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">ARS <span class=""> 165.00</span></h1>
 
                         <ul class="list-unstyled mt-3 mb-4">
                             <li></li>
                             <li>1 unidad</li>
-                            <li>1Kg</li>
-                            <li>$ 950.00 x Kg</li>
+                            <li>400grs</li>
+                            <li>$ 412,50 x Kg</li>
+                            <!-- <h6>1000</h6> -->
                         </ul>
                         <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="9">Comprar</a>
                     </div>
@@ -246,17 +249,17 @@
 
                 <div class="card mb-4 shadow-sm">
                     <div class="card-header">
-                        <h4 class="my-0 font-weight-bold">AGUA MICELAR LOREAL</h4>
+                        <h4 class="my-0 font-weight-bold">FERNET BRANCA</h4>
                     </div>
                     <div class="card-body">
-                        <img src="img/agua_dove.jpg" class="card-img-top">
-                        <h1 class="card-title pricing-card-title precio">ARS <span class=""> 524.90</span></h1>
+                        <img src="img/fernet.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">ARS <span class=""> 529.00</span></h1>
 
                         <ul class="list-unstyled mt-3 mb-4">
                             <li></li>
                             <li>1 unidad</li>
-                            <li>200 ml</li>
-                            <li>$ 2624.50 x litro</li>
+                            <li>750 ml</li>
+                            <li>$ 555.28 x litro</li>
                         </ul>
                         <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="7">Comprar</a>
                     </div>
@@ -264,17 +267,17 @@
 
                 <div class="card mb-4 shadow-sm">
                     <div class="card-header">
-                        <h4 class="my-0 font-weight-bold">AGUA MICELAR DOVE</h4>
+                        <h4 class="my-0 font-weight-bold">PACK COCA COLA</h4>
                     </div>
                     <div class="card-body">
-                        <img src="img/agua.jpg" class="card-img-top">
-                        <h1 class="card-title pricing-card-title precio">ARS <span class=""> 420.50</span></h1>
+                        <img src="img/cocas.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">ARS <span class=""> 1200.00</span></h1>
 
                         <ul class="list-unstyled mt-3 mb-4">
                             <li></li>
-                            <li>1 unidad</li>
-                            <li>200 ml</li>
-                            <li>$ 2102.50 x litro</li>
+                            <li>8 unidad</li>
+                            <li>2,25 lts</li>
+                            <li>$ 150 x unidad</li>
                         </ul>
                         <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="8">Comprar</a>
                     </div>
@@ -282,17 +285,17 @@
 
                 <div class="card mb-4 shadow-sm">
                     <div class="card-header">
-                        <h4 class="my-0 font-weight-bold">AGUA MICELAR GARNIER</h4>
+                        <h4 class="my-0 font-weight-bold">BEBIDA POWERADE </h4>
                     </div>
                     <div class="card-body">
-                        <img src="img/agua_garnier.jpg" class="card-img-top">
-                        <h1 class="card-title pricing-card-title precio">ARS <span class=""> 607.50</span></h1>
+                        <img src="img/power.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">ARS <span class=""> 75.82</span></h1>
 
                         <ul class="list-unstyled mt-3 mb-4">
                             <li></li>
                             <li>1 unidad</li>
-                            <li>400 ml</li>
-                            <li>$ 1518.75 x litro</li>
+                            <li>995 ml</li>
+                            <li>$ 76.20 x litro</li>
                         </ul>
                         <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="9">Comprar</a>
                     </div>

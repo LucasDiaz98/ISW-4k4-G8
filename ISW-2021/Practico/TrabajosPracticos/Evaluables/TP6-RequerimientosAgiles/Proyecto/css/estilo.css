@@ -18,3 +18,19 @@ img {
     color: #fff;
     font-weight: bold
 }
+
+
+.container .row .navbar .navbar-brand{
+    position:absolute;
+    left:0;
+    margin: auto;
+    width: 100%;
+    text-align:center;
+    display: inline-block;
+    padding-top: .3125rem;
+    padding-bottom: .3125rem;
+    margin-right: 1rem;
+    font-size: 2em;
+    line-height: inherit;
+    white-space: nowrap;
+}

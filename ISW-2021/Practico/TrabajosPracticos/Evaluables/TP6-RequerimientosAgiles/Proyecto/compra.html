@@ -24,11 +24,14 @@
         <div class="container">
             <div class="row justify-content-between mb-5">
                 <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: #a64141;">
-                    <a class="navbar-brand " href="index.html">DeliverEat!</a>
+                    <a class="navbar-brand" href="index.html">DeliverEat!</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
                         aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
+                    <img src="img/logo-utn.png" class="nav-link  ml-auto dropdown-toggle img-fluid" height="150px"
+                        width="150px" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false"></img>
                 </nav>
             </div>
         </div>
@@ -60,7 +63,7 @@
                         <div class="form-group row">
                             <label for="select" class="col-12 col-md-2 col-form-label h2">Ciudad :</label>
                             <div class="col-12 col-md-10">
-                                <select name="select" id="ciudad" style="width:48em">
+                                <select name="select" id="ciudad" style="width:auto">
                                     <option value="0" selected disabled>Seleccione ciudad</option>
                                     <option value="Córdoba">Cordoba</option>
                                     <option value="Rosario">Rosario</option>
@@ -132,7 +135,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <input type="radio" name="master" id="master" onclick="validarMaster();"> Tarjeta
+                                <input type="radio" name="opciones" id="master" onclick="validarMaster();"> Tarjeta
                                 Mastercard <br>
                             </div>
                         </div>
@@ -212,21 +215,21 @@
 
                     </tbody>
                     <tr>
-                        <th colspan="4" scope="col" class="text-right">SUB TOTAL :</th>
+                        <th colspan="4" scope="col" class="text-right">SUB TOTAL : ARS</th>
                         <th scope="col">
                             <p id="subtotal"></p>
                         </th>
                         <!-- <th scope="col"></th> -->
                     </tr>
                     <tr>
-                        <th colspan="4" scope="col" class="text-right">ENVÍO :</th>
+                        <th colspan="4" scope="col" class="text-right">ENVÍO : ARS</th>
                         <th scope="col">
                             <p id="igv"></p>
                         </th>
                         <!-- <th scope="col"></th> -->
                     </tr>
                     <tr>
-                        <th colspan="4" scope="col" class="text-right">TOTAL :</th>
+                        <th colspan="4" scope="col" class="text-right">TOTAL : ARS</th>
                         <th scope="col">
                             <input id="total" name="monto" class="font-weight-bold border-0" readonly
                                 style="background-color: white;"></input>

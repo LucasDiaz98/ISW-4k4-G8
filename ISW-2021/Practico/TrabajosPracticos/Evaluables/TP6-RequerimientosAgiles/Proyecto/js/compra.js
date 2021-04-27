@@ -23,7 +23,6 @@ const anoV = document.getElementById('anoV');
 const fechaE = document.getElementById('fecha-hora');
 
 
-
 cargarEventos();
 
 function cargarEventos() {
@@ -42,6 +41,7 @@ function cargarEventos() {
 
 }
 
+
 function armarString() {
     var compra = '<p><b>Calle</b>: ' + calle.value + '</p>' + '<p><b> Altura</b>: ' + altura.value + '</p>' + '<p><b>Ciudad</b>: ' + ciudad.value + '</p>' + '<p><b>Referencia</b>: ' + referencia.value + '</p>';
     if (monto.value != '') {
@@ -49,19 +49,19 @@ function armarString() {
 
     }
     if (titular.value != '') {
-        compra = compra + '<p><b>Medio de pago</b>: ' + tarjeta.value + '</p>' + '<p><b>Titular</b>: ' + titular.value + '</p>' + '<p><b>Numero de Tarjeta</b>: ' + numeroT.value + '</p>' + '<p><b>Fecha de Vencimiento</b>: ' + fechaV.value + '</p>' + '<p><b>CVV</b>: ' + cvv.value + '</p>'
+        compra = compra + '<p><b>Medio de pago</b>: ' + tarjeta.value + '</p>' + '<p><b>Titular</b>: ' + titular.value + '</p>' + '<p><b>Numero de Tarjeta</b>: ' + numeroT.value + '</p>' + '<p><b>Fecha de Vencimiento</b>: ' + mesV.value + '/' + anoV.value + '</p>' + '<p><b>CVV</b>: ' + cvv.value + '</p>'
     }
 
-    if (envioInmediato.checked ) {
+    if (envioInmediato.checked) {
         compra = compra + '<p><b>Forma de envio</b>: ' + envioInmediato.value + '</p>'
     }
 
-    if (envioFecha.checked ) {
+    if (envioFecha.checked) {
         compra = compra + '<p><b>Forma de envio</b>: ' + envioFecha.value + '</p>'
     }
 
     console.log(compra);
-    return compra + '<p><b>Total</b>: ' + total.value + '</p>';
+    return compra + '<p><b>Total</b>: ' + total.value + '</p>' + '<p><b>Su vuelto</b>: ARS ' + (monto.value - total.value).toFixed(2) + '</p>';
 
 }
 
@@ -91,22 +91,6 @@ function validarFechaVisa() {
 
 
 
-<<<<<<< HEAD
-=======
-
-
-
-function validarFechaEnvio(){
-    var actual = new Date();
-    var fechaHoraActual = ""+actual.getFullYear()+(actual.getMonth()+1)+actual.getDate()+actual.getHours()+actual.getMinutes()+actual.getSeconds();
-    var fechaHoraEnvio = ""+fechaE.getFullYear()+(fechaE.getMonth()+1)+fechaE.getDate()+fechaE.getHours()+fechaE.getMinutes()+fechaE.getSeconds();
-    
-    if(fechaHoraActual < fechaHoraEnvio){
-        alert("Por favor ingrese una fecha y hora valida");
-    }
-}
-
->>>>>>> 75c8657e7be7c961486596013a1e59dce33a8fb9
 function validarMaster() {
     if (master.checked) {
         Swal.fire({
@@ -115,6 +99,8 @@ function validarMaster() {
             text: 'Disculpe las molestias',
             showConfirmButton: false,
             timer: 2000
+        }).then(function () {
+            window.location = "compra.html";
         })
     }
 }
@@ -122,7 +108,7 @@ function validarMaster() {
 
 function procesarCompra() {
 
-    
+
     hayError = false;
     // e.preventDefault();
     if (compra.obtenerProductosLocalStorage().length === 0) {
@@ -156,8 +142,6 @@ function procesarCompra() {
             timer: 2000
         })
     }
-
-
 
     else if (ciudad.value == 0 || ciudad.value == "") {
         Swal.fire({
@@ -198,7 +182,7 @@ function procesarCompra() {
             timer: 2000
         })
     }
-    else if (tarjeta.checked && (titular.value == '' || numeroT.value == 0 || numeroT.charAt(0) == 5 || cvv.value <= 0 || cvv.value.length < 0)) {
+    else if (tarjeta.checked && (titular.value == '' || numeroT.value == 0 || cvv.value <= 0 || cvv.value.length < 0)) {
         Swal.fire({
             type: 'error',
             title: 'Oops...',
@@ -210,10 +194,8 @@ function procesarCompra() {
 
     else if (hayError != true) {
         swal.fire({
-
             title: "Detalle",
             html: armarString(),
-            function: generarPDF(),
             showCancelButton: true,
             confirmButtonText: 'Confirmar Pago!',
             cancelButtonText: 'Cancelar',
@@ -225,11 +207,12 @@ function procesarCompra() {
                     title: 'Pago Realizado',
                     text: 'Se realizo el pago correctamente',
                     showConfirmButton: false,
-                    timer:3000
+                    timer: 3000,
+                    function: generarPDF()
                 }).then(function () {
                     window.location = "index.html";
                 })
-                
+
             } else if (
                 /* Read more about handling dismissals below */
                 result.dismiss === Swal.DismissReason.cancel
@@ -241,11 +224,6 @@ function procesarCompra() {
                     showConfirmButton: false,
                 }
                 )
-<<<<<<< HEAD
-                window.location = "compra.html"
-=======
-                window.location = "compras.html"
->>>>>>> 75c8657e7be7c961486596013a1e59dce33a8fb9
             }
         })
     }
@@ -259,7 +237,6 @@ function generarPDF() {
         filename: 'Comprobante.pdf'
     })
 }
-<<<<<<< HEAD
 
 
 // parsea datePicker y compara fecha seleccionada con la actual
@@ -268,13 +245,13 @@ function validarFechaRec() {
     var fechaHoraActual = "" + actual.getFullYear() + (actual.getMonth() + 1) + actual.getDate() + actual.getHours() + actual.getMinutes();
     var fechaEnvio = fechaE.value;
     var anioFechaE = fechaEnvio.slice(0, 4);
-    var mesFechaE = fechaEnvio.slice(6,7);
-    var diaFechaE = fechaEnvio.slice(8,10);
-    var horaFechaE = fechaEnvio.slice(11,13);
-    var minFechaE = fechaEnvio.slice(14,16);
-    var fechaHoraEnvio = ""+anioFechaE + mesFechaE + diaFechaE + horaFechaE + minFechaE;
+    var mesFechaE = fechaEnvio.slice(6, 7);
+    var diaFechaE = fechaEnvio.slice(8, 10);
+    var horaFechaE = fechaEnvio.slice(11, 13);
+    var minFechaE = fechaEnvio.slice(14, 16);
+    var fechaHoraEnvio = "" + anioFechaE + mesFechaE + diaFechaE + horaFechaE + minFechaE;
 
-    if (fechaHoraEnvio < fechaHoraActual){
+    if (fechaHoraEnvio < fechaHoraActual) {
         swal.fire({
             type: 'error',
             title: 'La fecha ingresada es inválida',
@@ -283,7 +260,7 @@ function validarFechaRec() {
         }
         )
     }
-    else{
+    else {
         swal.fire({
             type: 'success',
             title: 'La fecha ingresada es correcta',
@@ -292,7 +269,5 @@ function validarFechaRec() {
         }
         )
     }
-    
+
 }
-=======
->>>>>>> 75c8657e7be7c961486596013a1e59dce33a8fb9

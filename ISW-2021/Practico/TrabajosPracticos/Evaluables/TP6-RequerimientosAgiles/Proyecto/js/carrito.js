@@ -18,7 +18,8 @@ class Carrito {
             titulo: producto.querySelector('h4').textContent,
             precio: producto.querySelector('.precio span').textContent,
             id: producto.querySelector('a').getAttribute('data-id'),
-            cantidad: 1
+            cantidad: 1,
+
         }
         let productosLS;
         productosLS = this.obtenerProductosLocalStorage();
@@ -180,7 +181,6 @@ class Carrito {
     //Procesar pedido
     procesarPedido(e) {
         e.preventDefault();
-
         if (this.obtenerProductosLocalStorage().length === 0) {
             Swal.fire({
                 type: 'error',
@@ -208,10 +208,9 @@ class Carrito {
 
         igv = 100;
         subtotal = parseFloat(total - igv).toFixed(2);
-
-        document.getElementById('subtotal').innerHTML = "ARS " + subtotal;
-        document.getElementById('igv').innerHTML = "ARS " + igv;
-        document.getElementById('total').value = "ARS " + total.toFixed(2);
+        document.getElementById('subtotal').innerHTML = subtotal;
+        document.getElementById('igv').innerHTML = igv;
+        document.getElementById('total').value = total.toFixed(2);
     }
 
     obtenerEvento(e) {
@@ -237,3 +236,14 @@ class Carrito {
         }
     }
 }
+
+
+// function calcularPeso(){
+//         let productosLS;
+//         productosLS = this.obtenerProductosLocalStorage();
+//         for (let i = 0; i < productosLS.length; i++) {
+//             let pesoTotal = Number(productosLS[i].peso * productosLS[i].cantidad);
+//             total = total + pesoTotal;
+//         }
+//         alert(pesoTotal)
+// }
