@@ -123,6 +123,16 @@ function procesarCompra() {
         })
     }
 
+    else if (envioFecha.checked && validarFechaRec() == false){
+        Swal.fire({
+            type: 'error',
+            title: 'Oops...',
+            text: 'Ingrese una fecha valida',
+            showConfirmButton: true,
+            timer: 2000
+        })
+    }
+
     else if (calle.value == '') {
         Swal.fire({
             type: 'error',
@@ -182,7 +192,8 @@ function procesarCompra() {
             timer: 2000
         })
     }
-    else if (tarjeta.checked && (titular.value == '' || numeroT.value == 0 || cvv.value <= 0 || cvv.value.length < 0)) {
+    else if (tarjeta.checked && (titular.value == '' || numeroT.value == 0 || cvv.value <= 0 || cvv.value.length < 0
+                            || (mesV.value > 12 || mesV.value < 1) || (numeroT.value.charAt(0) != 4))) {
         Swal.fire({
             type: 'error',
             title: 'Oops...',
@@ -259,6 +270,7 @@ function validarFechaRec() {
             showConfirmButton: false,
         }
         )
+        return false
     }
     else {
         swal.fire({
@@ -268,6 +280,7 @@ function validarFechaRec() {
             showConfirmButton: false,
         }
         )
+        return true
     }
 
 }
