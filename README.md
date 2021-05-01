@@ -13,10 +13,10 @@ La finalidad del mismo es la de:
 
 ## Estructura del Repositorio 
 
-![Screenshot](screenshot1.png)
+![Screenshot](screenshot_1.png)
 
 ## Nomenclatura general
-![Screenshot](screenshot2.png)
+![Screenshot](screenshot_2.png)
 
 
 ## Linea Base 
