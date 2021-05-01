@@ -20,14 +20,12 @@ La finalidad del mismo es la de:
 
 
 ## Linea Base 
-   Como grupo definimos que la LINEA BASE será todos los Martes después de la clase Practica (ya que por lo general se nos notifica el próximo TP a desarrollar) y los días Viernes al finalizar la clase Teórica.
+   Como grupo definimos que la LINEA BASE será el viernes siguiente a cada parcial.
 
 ## Integrantes
     - Federico Carabelli
     - Alex Cerutti
-    - Andres Claro Cordoba
     - Lucas Diaz
-    - Nicolas de la Cruz
     - Juan Rivero
 
 Para consultar el contenido, no es necesario disponer de una cuenta en Github, sin embargo, si se requiere de una para proponer cambios.
