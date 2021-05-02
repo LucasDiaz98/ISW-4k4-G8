@@ -13,7 +13,7 @@ La finalidad del mismo es la de:
 
 ## Estructura del Repositorio 
 
-![Screenshot](screenshot_1.png)
+![Screenshot](screenshot_5.png)
 
 ## Nomenclatura general
 ![Screenshot](screenshot_2.png)
