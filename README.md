@@ -22,7 +22,7 @@ La finalidad del mismo es la de:
 ## Items de configuracion
 ![Screenshot](screenshot_3.png)
 
-## Items de configuracion
+## Glosario
 ![Screenshot](screenshot_4.png)
 
 ## Linea Base 
