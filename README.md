@@ -22,6 +22,9 @@ La finalidad del mismo es la de:
 ## Items de configuracion
 ![Screenshot](screenshot_3.png)
 
+## Items de configuracion
+![Screenshot](screenshot_4.png)
+
 ## Linea Base 
    Como grupo definimos que la LINEA BASE será el viernes siguiente a cada parcial.
 
