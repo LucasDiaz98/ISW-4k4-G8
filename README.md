@@ -13,7 +13,7 @@ La finalidad del mismo es la de:
 
 ## Estructura del Repositorio 
 
-![Screenshot](screenshot_5.png)
+![screenshot_5](https://user-images.githubusercontent.com/81245814/132611166-e154360a-207c-47c5-84dc-3038f82bfe60.png)
 
 ## Nomenclatura general
 ![Screenshot](screenshot_2.png)
